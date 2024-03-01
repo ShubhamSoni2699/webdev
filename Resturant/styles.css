@@ -1,0 +1,41 @@
+.center-ele{
+    margin: 2%;
+    width: 100%;
+    height:fit-content ;
+    display: flex ;
+    justify-content: center;
+}
+
+img{
+    height: 200px;
+    width: 300px;
+}
+
+#card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-content: space-evenly;
+    margin-top: 5%;
+    margin-left: 5%;
+    row-gap: 25px;
+    column-gap: 0px;
+}
+
+.card-ele{
+    width: 290px;
+    height: 170px;
+}
+
+body{
+    background-color: #344955;
+}
+
+@media (min-width: 576px) {
+   
+}
+
+@media (min-width: 992px) {
+    
+}
