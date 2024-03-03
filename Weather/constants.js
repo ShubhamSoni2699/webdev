@@ -5,6 +5,8 @@ let nameElement = document.getElementById("city");
 let weatherElement = document.getElementById("weather");
 let tempElement = document.getElementById("temp");
 
+const apiKey = "YOUR API KEY";
+
 
 function setFields(data){
     if(data.code==200){
@@ -19,7 +21,7 @@ function setFields(data){
 }
 
 function getUrl(city){
-    return `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c56749d27a583a61b2fddf948a0d03ce&units=metric`;
+    return `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 }
 
 export {getUrl , setFields} ;

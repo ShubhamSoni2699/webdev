@@ -1,21 +1,14 @@
 import {getUrl,setFields} from "./constants.js";
 
-
 document.getElementById('location-form').addEventListener('submit', getWeather);
 
-
 async function getWeather(e) {
-  //Write you code logic here
   e.preventDefault();
-  // Error should be very specific
-  // Error: Failed to fetch weather data,   should always fetch this error in case of any failure otherwise you test cases will get failed.
-  
+
   let city = "";
   city = document.getElementById("input").value;
-
-  if(city==""){
-
-  }else{
+  
+  if(city!=""){
     city = city.toLowerCase();
     const url = getUrl(city);
     try{
@@ -23,9 +16,8 @@ async function getWeather(e) {
       setFields(data);
     }catch(e){
       console.log(e);
-    } 
+    }
   }
-
 }
 
 
