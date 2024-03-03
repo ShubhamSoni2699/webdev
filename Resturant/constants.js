@@ -1,3 +1,5 @@
+let cardContainer = document.getElementById("card-container");
+
 const menu = [
     { id: 1, title: "Soup of the day", category: "starters", price: "$5", description: "Freshly made soup with seasonal ingredients",img: "https://images.pexels.com/photos/1731535/pexels-photo-1731535.jpeg?auto=compress&cs=tinysrgb&w=400" },
     { id: 2, title: "Bruschetta", category: "starters", price: "$7", description: "Grilled bread rubbed with garlic and topped with diced tomatoes, fresh basil, and mozzarella",img: "https://www.allrecipes.com/thmb/kt9t899s87rKleitZiaUwWOoNJI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/3605381-b506207e5f494e44a7cf5c1bbe488748.jpg" },
@@ -13,7 +15,6 @@ const menu = [
     { id: 12, title: "Mango Lassi", category: "beverages", price: "$5", description: "Refreshing Indian drink made with mango and yogurt", img: "https://media.istockphoto.com/id/1217751214/photo/fresh-mango-lassi-and-mango-fruit.webp?b=1&s=170667a&w=0&k=20&c=Jt0J70BwVkGdirVAu78hKb-MiMzN3_GUbCz8SmGUdS8=" },
     { id: 13, title: "Green Tea", category: "beverages", price: "$3", description: "Traditional green tea with antioxidants", img: "https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z3JlZW4lMjB0ZWF8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" },
 ];
-
 
 function menuComponent(item){
     return (
@@ -32,10 +33,17 @@ function menuComponent(item){
     )
 }
 
+function renderItems(menuItems){
+    if(menuItems.length!=0){
+        cardContainer.innerHTML = "";
+        menuItems.forEach(item => {cardContainer.innerHTML += menuComponent(item)});
+    }else{
+        cardContainer.innerHTML = "";
+        menu.forEach(item => {cardContainer.innerHTML += menuComponent(item)});
+    }
+}
 
-export default menu;
-
-export {menuComponent}
+export {menu , renderItems};
 
 
     //   return `<div class="menu-item col-12 col-md-6 col-lg-4">

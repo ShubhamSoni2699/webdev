@@ -6,21 +6,29 @@
   </head>
   <body>
 
-
+  
     <!-- Make the weather app containers and form here -->
     <div class="container">
       <h1 class="heading">Weather app</h1>
-        <form class="input-container">
-          <input class="input" placeholder="Enter city here" />
+        <form class="input-container" id='location-form'>
+          <input id="input" placeholder="Enter city here" />
           <button onclick="" type="submit">
             GET weather
           </button>
         </form> 
       <div class="weather-container">
-        
+        <div id="city">
+
+        </div>
+        <div id="weather">
+
+        </div>
+        <div id="temp">
+          
+        </div>
       </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>
