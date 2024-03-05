@@ -3,6 +3,7 @@ let weatherElement = document.getElementById("weather");
 let tempElement = document.getElementById("temp");
 
 const apiKey = $API_KEY_WEATHER;
+console.log(apiKey);
 
 function setFields(data){
     if(data.code==200){
