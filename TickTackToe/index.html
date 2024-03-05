@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tack Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Sevillana&display=swap" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <h1 class="winner" hidden> <h1 class="result" hidden></h1> <a href="/"> <img hidden class="restart" src="./assets/images/refresh.png" height="35px" width="35px" alt="Restart Image"> </a> </h1>
+
+        <div class="heading">
+            <h1>Player 1 : O &nbsp;</h1>
+            <h1> &nbsp; Player 2 : X</h1>
+        </div>
+
+        <div class="row">
+            <div class="box" id="11" role="button"></div>
+            <div class="box" id="12" role="button"></div>
+            <div class="box" id="13" role="button"></div>
+        </div>
+        <div class="row">
+            <div class="box" id="21" role="button"></div>
+            <div class="box" id="22" role="button"></div>
+            <div class="box" id="23" role="button"></div>
+        </div>
+        <div class="row">
+            <div class="box" id="31" role="button"></div>
+            <div class="box" id="32" role="button"></div>
+            <div class="box" id="33" role="button"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./index.js" charset="UTF-8"></script>
+</body>
+</html>
