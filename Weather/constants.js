@@ -2,7 +2,7 @@ let nameElement = document.getElementById("city");
 let weatherElement = document.getElementById("weather");
 let tempElement = document.getElementById("temp");
 
-const apiKey = "YOUR API KEY";
+const apiKey = $API_KEY_WEATHER;
 
 function setFields(data){
     if(data.code==200){
