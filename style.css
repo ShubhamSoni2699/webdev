@@ -52,11 +52,11 @@ body{
 .aboutMe p{
     color: wheat;
     margin-top: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .aboutMe img{
-    margin-top: 20px;
+    margin-top: 2%;
     width: 12%;
     height: 20%;
 }
