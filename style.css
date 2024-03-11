@@ -52,13 +52,7 @@ body{
 .aboutMe p{
     color: wheat;
     margin-top: 10px;
-    font-size: 1.5rem;
-}
-
-.aboutMe img{
-    margin-top: 2%;
-    width: 12%;
-    height: 20%;
+    font-size: 2rem;
 }
 
 .socialMedia img{
@@ -86,4 +80,11 @@ body{
     margin-top: 25px;
     font-size: 2rem;
     color: wheat;
+}
+
+.donation img{
+    width: 2%;
+    height: 2%;
+    margin-left: 2.5%;
+    margin-top: 5px;
 }
