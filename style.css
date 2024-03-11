@@ -12,7 +12,7 @@ body{
     margin-left: 2.5%;
     margin-top: 2.5%;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1.5fr 1fr;
     grid-template-rows:1fr 1.5fr ;
     gap: 10px;
     border: 1px solid white;
@@ -21,7 +21,8 @@ body{
 .heading{
     color: wheat;
     margin: 2%;
-    font-size: 2rem;
+    grid-column: span 2;
+    font-size: 2vw;
 }
 
 .profilePic{
@@ -32,26 +33,39 @@ body{
 }
 
 .profilePic img{
-    width: 320px;
-    height: 310px;
+    width: 90%;
+    height: 90%;
     border-radius: 50%;
     border: 3px solid wheat;
 }
 
 .aboutMe{
-    margin: 2%;
+    margin: 4%;
+    gap: 10px;
 }
 
 .aboutMe h1{
-    font-size: xx-large;
+    font-size: 3rem;
     color: wheat;
+}
+
+.aboutMe p{
+    color: wheat;
+    margin-top: 10px;
+    font-size: 2rem;
+}
+
+.aboutMe img{
+    margin-top: 20px;
+    width: 12%;
+    height: 20%;
 }
 
 .socialMedia img{
     background: wheat;
     margin-top: 25px;
-    height: 100px;
-    width: 100px;
+    height: 10%;
+    width: 10%;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -64,6 +78,12 @@ body{
 }
 
 .projects a{
-    font-size: xx-large;
+    font-size: 3rem;
+    color: wheat;
+}
+
+.projects ul{
+    margin-top: 25px;
+    font-size: 2rem;
     color: wheat;
 }
