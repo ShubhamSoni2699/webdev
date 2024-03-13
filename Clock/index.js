@@ -4,9 +4,9 @@ document.getElementById("clock").addEventListener("load" , ()=>{
 
 function showTime(){
     var date = new Date();
-    var h = date.getHours(); // 0 - 23
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
+    var h = date.getHours(); 
+    var m = date.getMinutes(); 
+    var s = date.getSeconds(); 
     var session = "AM";
     
     if(h == 0){
