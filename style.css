@@ -90,3 +90,34 @@ body{
     margin-left: 2.5%;
     margin-top: 5px;
 }
+
+
+@media only screen and (max-device-width:480px) {
+    body{
+        transform: rotate(90deg);
+        transform-origin: 50% 50%;
+    }
+}
+
+@media only screen and (max-device-width:768px) {
+    .heading{
+        font-size: large;
+    }
+    .aboutMe h1{
+        font-size: 2rem;
+    }
+    .projects a{
+        font-size: 2rem;
+    }
+    .aboutMe p{
+        margin-top: 5px;
+        font-size: 1.3rem;
+    }
+}
+
+/* @media (max-width:600px) {
+    body{
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+} */
