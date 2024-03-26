@@ -73,7 +73,7 @@ body{
     margin-top: 10px;
 }
 
-.projects a{
+.projects>a{
     font-size: 3rem;
     color: wheat;
 }
@@ -81,6 +81,10 @@ body{
 .projects ul{
     margin-top: 25px;
     font-size: 2rem;
+    color: wheat;
+}
+
+li>a{
     color: wheat;
 }
 
