@@ -36,9 +36,8 @@ function solve(board){
 }
 
 async function sudokuSolver(board){
-    console.log(board);
-    await solve(board);
-    console.log(board);
+    solve(board);
+    return await board
 }
 
 export default sudokuSolver;

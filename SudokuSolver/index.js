@@ -5,8 +5,6 @@ $(".box").change( function(e){
     board[Number(e.target.id[0])][Number(e.target.id[1])] = Number(e.target.value);
 } )
 
-$(".generate").click( function (){
-    
-    sudokuSolver(example);
-
+$(".generate").click( async function (){
+    let solution =  await sudokuSolver(board);
 } )
