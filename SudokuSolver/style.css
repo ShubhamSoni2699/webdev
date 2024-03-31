@@ -57,8 +57,9 @@ body{
     font-weight: 700;
 }
 
-.generate{
+.button{
     font-size: 1.5rem;
+    margin: 10px;
     margin-top: 10px;
     color: black;
     font-weight: 900;
@@ -66,7 +67,7 @@ body{
     border-radius: 20px;
     cursor: pointer;
     background-color: #789461;
-    padding: 1%;
+    padding: 3%;
 }
 
 @media (max-width:600px) {
@@ -79,7 +80,7 @@ body{
         font-size: 1.5rem;
         font-weight: 700;
     }
-    .generate{
+    .button{
         font-size: 1rem;
     }
 }
