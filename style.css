@@ -142,9 +142,59 @@ li>a{
 }
 
 @media only screen and (max-device-width:480px) {
-    body{
+    /* *{
         transform: rotate(90deg);
         transform-origin: 50% 50%;
+        margin: 0%;
+    } */
+
+    .container{
+        width: 95%;
+        height: 90vh;
+        margin-left: 2.5%;
+        margin-top: 2.5%;
+        display: grid;
+        grid-template-columns: 2fr 1.5fr 1fr;
+        grid-template-rows:1fr 3fr;
+        gap: 10px;
+        border: 1px solid white;
+    }
+
+    .heading{
+        color: wheat;
+        margin: 2%;
+        grid-column: span 2;
+        grid-row: span 1;
+        font-size: xx-large;
+    }
+
+    .profilePic img{
+        width: 160px;
+        height: 160px;
+    }
+
+    .socialMedia img{
+        margin-top: 10px;
+        height: 30%;
+        width: 30%;
+    }
+
+    .aboutMe h1{
+        font-size: 1rem;
+        color: wheat;
+    }
+
+    .aboutMe p{
+        font-size: 3rem;
+    }
+
+    .tech-container{
+        height: 100%;
+    }
+
+    .projects{
+        margin-left: 0%;
+        margin-top: 10px;
     }
 }
 
@@ -162,6 +212,22 @@ li>a{
         margin-top: 5px;
         font-size: 1.3rem;
     }
+    .Technology h1{
+        font-size: 2rem;
+    }
+    .tech-container{
+        height: 70%;
+    }
+    .skill{
+        background-color: wheat;
+        height: fit-content;
+        width: fit-content;
+        font-size: small;
+        color: black;
+        padding: 5px;
+        border-radius: 30%;
+    }
+    
 }
 
 /* @media (max-width:600px) {
