@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Height No of Pieces Calculator</title>
+    <link rel="stylesheet" href="./style.css" >
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+          <form class="input-container" id='input-form'>
+            <input class="input" id="thickness" placeholder="Enter Thickness" />
+            <input class="input" id="sizes" placeholder="Enter diffrent sizes" />
+            <input class="input" id="packetSize" placeholder="Enter packet size" />
+            <input class="input" id="stepSize"  placeholder="Enter step size" />
+            <button class="thickness-input-button" type="submit">
+              Enter
+            </button>
+          </form> 
+        <div class="input-height-container" hidden>
+          <form class="input-container" id="input-height-form">
+            <!-- <div class="height-input" id="1" hidden>
+              <input id="input" placeholder="Enter width"/>
+              <input id="input" placeholder="Enter Stack height"/>
+            </div> -->
+            <!-- <button id="height-submit-button" type="submit">
+              Enter
+            </button> -->
+          </form>
+        </div>
+      </div>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
