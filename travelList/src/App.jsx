@@ -2,17 +2,21 @@ import { useState } from "react";
 
 const initialItems = [
   { id: 1, description: "Passports", quantity: 2, packed: false },
-  { id: 2, description: "Socks", quantity: 12, packed: true },
+  { id: 2, description: "Socks", quantity: 12, packed: false },
 ];
 
 let lastId = initialItems.length;
 
 function App() {
+  const [items, setItems] = useState(initialItems);
+  function handleAddItems(newItem) {
+    return setItems((i) => [...i, newItem]);
+  }
   return (
     <div className="app">
       <Logo />
-      <Form />
-      <TravelList />
+      <Form onAddItems={handleAddItems} />
+      <TravelList items={items} />
       <Stats />
     </div>
   );
@@ -22,7 +26,7 @@ function Logo() {
   return <h1>Far Away</h1>;
 }
 
-function Form() {
+function Form({ onAddItems }) {
   const [desc, setDesc] = useState("");
   const [quantity, setQuantity] = useState(1);
 
@@ -37,8 +41,8 @@ function Form() {
       quantity: quantity,
       packed: false,
     };
-    initialItems.push(newItem);
     lastId += 1;
+    onAddItems(newItem);
     setDesc("");
     setQuantity(1);
   }
@@ -60,11 +64,11 @@ function Form() {
   );
 }
 
-function TravelList() {
+function TravelList({ items }) {
   return (
     <div className="list">
       <ul>
-        {initialItems.map((item) => (
+        {items.map((item) => (
           <Item key={item.id} item={item} />
         ))}
       </ul>
@@ -77,8 +81,14 @@ function Stats() {
 }
 
 function Item({ item }) {
+  const [isPacked, setIsPacked] = useState(item.packed);
   return (
     <li>
+      <input
+        type="checkbox"
+        value={isPacked}
+        onChange={() => setIsPacked((curr) => (curr ? false : true))}
+      ></input>
       <span style={item.packed ? { textDecoration: "line-through" } : {}}>
         {item.quantity} {item.description}
       </span>
