@@ -12,11 +12,14 @@ function App() {
   function handleAddItems(newItem) {
     return setItems((i) => [...i, newItem]);
   }
+  function handleDeleteItems(id) {
+    return setItems((i) => i.filter((item) => id !== item.id));
+  }
   return (
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <TravelList items={items} />
+      <TravelList items={items} onDeleteItems={handleDeleteItems} />
       <Stats />
     </div>
   );
@@ -64,12 +67,12 @@ function Form({ onAddItems }) {
   );
 }
 
-function TravelList({ items }) {
+function TravelList({ items, onDeleteItems }) {
   return (
     <div className="list">
       <ul>
         {items.map((item) => (
-          <Item key={item.id} item={item} />
+          <Item key={item.id} item={item} onDeleteItems={onDeleteItems} />
         ))}
       </ul>
     </div>
@@ -80,7 +83,7 @@ function Stats() {
   return <footer className="stats">Stats</footer>;
 }
 
-function Item({ item }) {
+function Item({ item, onDeleteItems }) {
   const [isPacked, setIsPacked] = useState(item.packed);
   return (
     <li>
@@ -92,7 +95,7 @@ function Item({ item }) {
       <span style={item.packed ? { textDecoration: "line-through" } : {}}>
         {item.quantity} {item.description}
       </span>
-      <button>❌</button>
+      <button onClick={() => onDeleteItems(item.id)}>❌</button>
     </li>
   );
 }
