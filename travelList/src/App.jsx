@@ -15,11 +15,22 @@ function App() {
   function handleDeleteItems(id) {
     return setItems((i) => i.filter((item) => id !== item.id));
   }
+  function handleUpdatePacked(id) {
+    return setItems((i) =>
+      i.map((item) =>
+        item.id == id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  }
   return (
     <div className="app">
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <TravelList items={items} onDeleteItems={handleDeleteItems} />
+      <TravelList
+        items={items}
+        onDeleteItems={handleDeleteItems}
+        onUpdatePacked={handleUpdatePacked}
+      />
       <Stats />
     </div>
   );
@@ -67,12 +78,17 @@ function Form({ onAddItems }) {
   );
 }
 
-function TravelList({ items, onDeleteItems }) {
+function TravelList({ items, onDeleteItems, onUpdatePacked }) {
   return (
     <div className="list">
       <ul>
         {items.map((item) => (
-          <Item key={item.id} item={item} onDeleteItems={onDeleteItems} />
+          <Item
+            key={item.id}
+            item={item}
+            onDeleteItems={onDeleteItems}
+            onUpdatePacked={onUpdatePacked}
+          />
         ))}
       </ul>
     </div>
@@ -83,14 +99,13 @@ function Stats() {
   return <footer className="stats">Stats</footer>;
 }
 
-function Item({ item, onDeleteItems }) {
-  const [isPacked, setIsPacked] = useState(item.packed);
+function Item({ item, onDeleteItems, onUpdatePacked }) {
   return (
     <li>
       <input
         type="checkbox"
-        value={isPacked}
-        onChange={() => setIsPacked((curr) => (curr ? false : true))}
+        value={item.packed}
+        onChange={() => onUpdatePacked(item.id)}
       ></input>
       <span style={item.packed ? { textDecoration: "line-through" } : {}}>
         {item.quantity} {item.description}
