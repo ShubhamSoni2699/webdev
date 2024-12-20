@@ -12,6 +12,9 @@ function App() {
   function handleAddItems(newItem) {
     return setItems((i) => [...i, newItem]);
   }
+  function handleClearItmes() {
+    return setItems([]);
+  }
   function handleDeleteItems(id) {
     return setItems((i) => i.filter((item) => id !== item.id));
   }
@@ -30,6 +33,7 @@ function App() {
         items={items}
         onDeleteItems={handleDeleteItems}
         onUpdatePacked={handleUpdatePacked}
+        onClearItems={handleClearItmes}
       />
       <Stats items={items} />
     </div>
@@ -78,7 +82,7 @@ function Form({ onAddItems }) {
   );
 }
 
-function TravelList({ items, onDeleteItems, onUpdatePacked }) {
+function TravelList({ items, onDeleteItems, onUpdatePacked, onClearItems }) {
   const [sortBy, setSortBy] = useState("input");
   let sortedItems = [];
   if (sortBy === "input") {
@@ -108,6 +112,7 @@ function TravelList({ items, onDeleteItems, onUpdatePacked }) {
           <option value="description">Sort by description</option>
           <option value="packed">Sort by packed</option>
         </select>
+        <button onClick={onClearItems}>Clear</button>
       </div>
     </div>
   );
