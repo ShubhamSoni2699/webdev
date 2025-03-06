@@ -11,7 +11,7 @@ function AppLayout() {
 
       <Header />
 
-      <main>
+      <main className="overflow-scroll">
         <Outlet />
       </main>
 
