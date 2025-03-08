@@ -5,16 +5,15 @@ import Spinner from "./Spinner";
 function AppLayout() {
   const navigation = useNavigation();
   let isLoading = navigation.state === "loading";
+  console.log(isLoading);
   return (
     <div className="layout">
       {isLoading && <Spinner />}
 
       <Header />
-
       <main className="overflow-scroll">
         <Outlet />
       </main>
-
       <CartOverview />
     </div>
   );
