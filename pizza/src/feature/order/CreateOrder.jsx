@@ -2,6 +2,9 @@
 
 import { Form, redirect } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
+import { useSelector } from "react-redux";
+import { getCart } from "../cart/cartSlice";
+import EmptyCart from "../cart/EmptyCart";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -11,59 +14,54 @@ const isValidPhone = (str) =>
 
 console.log(isValidPhone);
 
-const fakeCart = [
-  {
-    pizzaId: 12,
-    name: "Mediterranean",
-    quantity: 2,
-    unitPrice: 16,
-    totalPrice: 32,
-  },
-  {
-    pizzaId: 6,
-    name: "Vegetale",
-    quantity: 1,
-    unitPrice: 13,
-    totalPrice: 13,
-  },
-  {
-    pizzaId: 11,
-    name: "Spinach and Mushroom",
-    quantity: 1,
-    unitPrice: 15,
-    totalPrice: 15,
-  },
-];
-
 function CreateOrder() {
   // const [withPriority, setWithPriority] = useState(false);
-  const cart = fakeCart;
-  console.log(cart);
+  const cart = useSelector(getCart);
+  const username = useSelector((state) => state.user.username);
+  if (!cart.length) return <EmptyCart />;
   return (
-    <div>
-      <h2>Ready to order</h2>
+    <div className="m-2 space-y-2">
+      <h2 className="mb-4 text-2xl font-semibold">Ready to order</h2>
 
-      <Form method="POST">
-        <div>
-          <label>First Name</label>
-          <input type="text" name="customer" required />
-        </div>
-
-        <div>
-          <label>Phone number</label>
-          <div>
-            <input type="tel" name="phone" required />
+      <Form className="mb-4" method="POST">
+        <div className="mb-4 flex flex-row items-center space-x-2">
+          <label className="basis-40">First Name</label>
+          <div className="grow">
+            <input
+              className="w-96 rounded-full bg-amber-200 p-2 placeholder:text-center"
+              type="text"
+              name="customer"
+              defaultValue={username}
+              required
+            />
           </div>
         </div>
 
-        <div>
-          <label>Address</label>
-          <div>
-            <input type="text" name="address" required />
+        <div className="mb-4 flex flex-row items-center space-x-2">
+          <label className="basis-40">Phone number</label>
+          <div className="grow">
+            <input
+              className="w-96 rounded-full bg-amber-200 p-2 placeholder:text-center"
+              type="tel"
+              name="phone"
+              required
+            />
           </div>
         </div>
 
-        <div>
+        <div className="mb-4 flex flex-row items-center space-x-2">
+          <label className="basis-40">Address</label>
+          <div className="grow">
+            <input
+              className="w-96 rounded-full bg-amber-200 p-2 placeholder:text-center"
+              type="text"
+              name="address"
+              required
+            />
+          </div>
+        </div>
+
+        <div className="mb-5">
           <input
             type="checkbox"
             name="priority"
@@ -76,7 +74,7 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button className="inline-block rounded-full bg-amber-400 p-3 font-semibold text-stone-800 uppercase">
+          <button className="inline-block rounded-full bg-amber-400 p-3 font-semibold text-stone-800 uppercase hover:cursor-pointer">
             Order now
           </button>
         </div>

@@ -23,17 +23,23 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
   console.log(id, cart);
   return (
-    <div>
-      <div>
-        <h2>Status</h2>
+    <div className="m-2">
+      <div className="mb-4 flex flex-row items-center justify-between">
+        <h2 className="text-3xl font-bold">{`Order #${id} Status`}</h2>
 
-        <div>
-          {priority && <span>Priority</span>}
-          <span>{status} order</span>
+        <div className="space-x-4">
+          {priority && (
+            <span className="rounded-full bg-red-600 px-3 py-2 text-lg font-semibold text-white capitalize">
+              Priority
+            </span>
+          )}
+          <span className="rounded-full bg-green-600 px-3 py-2 text-lg font-semibold text-white capitalize">
+            {status} order
+          </span>
         </div>
       </div>
 
-      <div>
+      <div className="mb-4 flex flex-row items-center justify-between bg-stone-300 p-5">
         <p>
           {deliveryIn >= 0
             ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
